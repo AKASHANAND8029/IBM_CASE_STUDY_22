@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 @RestController
@@ -33,7 +34,7 @@ public class UserTaskController {
     {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         Dto dto=modelMapper.map(requestModel,Dto.class);
-        dto.setUniqueTaskId(UUID.randomUUID().toString());
+        dto.setUniqueTaskId(new Random().nextInt(10000));
         dto= taskService.createTask(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(modelMapper.map(dto,ResponseModel.class));
     }
@@ -50,7 +51,7 @@ public class UserTaskController {
         return ResponseEntity.ok(list);
     }
     @GetMapping("/task/{id}")
-    public ResponseEntity<ResponseModel> findUserByUserId(@PathVariable("id") String id)
+    public ResponseEntity<ResponseModel> findUserByUserId(@PathVariable("id") Integer id)
     {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
@@ -58,13 +59,13 @@ public class UserTaskController {
 
     }
     @DeleteMapping("/task/{id}")
-    public ResponseEntity<?> deleteUserByUserId(@PathVariable("id") String id)
+    public ResponseEntity<?> deleteUserByUserId(@PathVariable("id") Integer id)
     {
         taskService.deleteTaskByTaskId(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
     @PutMapping("/task/{id}")
-    public ResponseEntity<ResponseModel> updateUserByUserId(@RequestBody RequestModel requestModel,@PathVariable("id") String id )
+    public ResponseEntity<ResponseModel> updateUserByUserId(@RequestBody RequestModel requestModel,@PathVariable("id") Integer id )
     {  modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
         return ResponseEntity.ok(modelMapper.map(taskService.updateTaskByTaskId(requestModel,id),ResponseModel.class));

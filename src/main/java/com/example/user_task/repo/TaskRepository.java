@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskRepository extends CrudRepository<UserTask,Integer> {
     @Query
-    public UserTask findByUniqueTaskId(String uniqueTaskId);
+    public UserTask findByUniqueTaskId(Integer uniqueTaskId);
 
 }

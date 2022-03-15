@@ -12,11 +12,8 @@ import javax.persistence.*;
 public class UserTask {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "task_id", nullable = false)
-    private Integer taskId;
-
     @Column(name = "unique_task_id", nullable = false)
-    private String uniqueTaskId;
+    private Integer uniqueTaskId;
 
 
     @Column(name = "task_name", nullable = false)

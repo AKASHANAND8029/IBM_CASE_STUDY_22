@@ -34,6 +34,6 @@ public class UserTaskApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        taskRepository.save(new UserTask(1, UUID.randomUUID().toString(),"ProjectXYZ","Infrastructure Project",true,"02-03-22","31-03-22","Manager1","Abhinav"));
+        taskRepository.save(new UserTask(1,"ProjectXYZ","Infrastructure Project",true,"02-03-22","31-03-22","Manager1","Abhinav"));
     }
 }

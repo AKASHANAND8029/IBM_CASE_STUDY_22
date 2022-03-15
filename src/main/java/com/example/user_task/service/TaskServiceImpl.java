@@ -56,7 +56,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Dto findTaskByTaskId(String uniqueTaskId) {
+    public Dto findTaskByTaskId(Integer uniqueTaskId) {
 
     UserTask userTask= findTaskId(uniqueTaskId);
         if(userTask==null)
@@ -67,7 +67,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void deleteTaskByTaskId(String uniqueTaskId) {
+    public void deleteTaskByTaskId(Integer uniqueTaskId) {
         UserTask userTask=findTaskId(uniqueTaskId);
         if(userTask==null)
         {
@@ -77,7 +77,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Dto updateTaskByTaskId(RequestModel requestModel, String uniqueTaskId) {
+    public Dto updateTaskByTaskId(RequestModel requestModel, Integer uniqueTaskId) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         UserTask entity=findTaskId(uniqueTaskId);
         if (entity==null)
@@ -97,7 +97,7 @@ public class TaskServiceImpl implements TaskService {
 
     }
 
-    private UserTask findTaskId(String uniqueTaskId) {
+    private UserTask findTaskId(Integer uniqueTaskId) {
 
         UserTask userTask= taskRepository.findByUniqueTaskId(uniqueTaskId);
         return userTask;

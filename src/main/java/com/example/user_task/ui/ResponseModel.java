@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class ResponseModel {
-    private String uniqueTaskId;
+    private Integer uniqueTaskId;
     private String taskName;
     private String taskDescription;
     private boolean completed;

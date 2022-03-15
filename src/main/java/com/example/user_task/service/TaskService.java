@@ -8,7 +8,7 @@ import java.util.List;
 public interface TaskService {
     public Dto createTask(Dto dto);
     List<Dto> getTask();
-    public Dto findTaskByTaskId(String uniqueTaskId);
-    public void deleteTaskByTaskId(String uniqueTaskId);
-    Dto updateTaskByTaskId(RequestModel requestModel, String uniqueTaskId);
+    public Dto findTaskByTaskId(Integer uniqueTaskId);
+    public void deleteTaskByTaskId(Integer uniqueTaskId);
+    Dto updateTaskByTaskId(RequestModel requestModel, Integer uniqueTaskId);
 }

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class Dto {
 
-    private String uniqueTaskId;
+    private Integer uniqueTaskId;
     private String taskName;
     private String taskDescription;
     private boolean completed;
