@@ -15,6 +15,6 @@ public class ResponseModel {
     private String startDate;
     private String endDate;
     private String assignedBy;
-    private String assignedTo;
-    private String email;
+//    private String assignedTo;
+//    private String email;
 }

@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends CrudRepository<UserTask,Integer> {
+public interface TaskRepository extends CrudRepository<UserTask,Integer> {
     @Query
     public UserTask findByUniqueTaskId(String uniqueTaskId);
 

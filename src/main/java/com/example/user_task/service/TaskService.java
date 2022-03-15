@@ -5,7 +5,7 @@ import com.example.user_task.ui.RequestModel;
 
 import java.util.List;
 
-public interface UserService {
+public interface TaskService {
     public Dto createTask(Dto dto);
     List<Dto> getTask();
     public Dto findTaskByTaskId(String uniqueTaskId);

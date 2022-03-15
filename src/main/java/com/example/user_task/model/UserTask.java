@@ -8,7 +8,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "user_task_management")
+@Table(name = "task_management")
 public class UserTask {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -40,12 +40,12 @@ public class UserTask {
     @Column(name = "assigned_to_person", nullable = false)
     private String assignedTo;
 
-    @Column(name = "email", nullable = false)
-    private String email;
+//    @Column(name = "email", nullable = false)
+//    private String email;
 
 //    @Column(name = "user_name",nullable = false,unique = true)
 //    private String userName;
 //
-    @Column(name = "user_encrypted_password",nullable = false)
-    private String encryptedPassword;
+//    @Column(name = "user_encrypted_password",nullable = false)
+//    private String encryptedPassword;
 }

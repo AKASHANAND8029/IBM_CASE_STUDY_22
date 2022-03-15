@@ -17,7 +17,7 @@ public class Dto {
     private String endDate;
     private String assignedBy;
     private String assignedTo;
-    private String email;
-    private String password;
+//    private String email;
+//    private String password;
 }
 
