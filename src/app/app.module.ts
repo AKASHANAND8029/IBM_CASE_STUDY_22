@@ -12,6 +12,7 @@ import { TaskDetailsComponent } from './Task/task-details/task-details.component
 import { CreateUserComponent } from './User/create-user/create-user.component';
 import { UserListComponent } from './User/user-list/user-list.component';
 import { UserDetailsComponent } from './User/user-details/user-details.component';
+import { LoginComponent } from './login/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserDetailsComponent } from './User/user-details/user-details.component
     TaskDetailsComponent,
     CreateUserComponent,
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
