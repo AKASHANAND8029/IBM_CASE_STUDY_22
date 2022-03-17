@@ -1,0 +1,43 @@
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>User List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Role Type</th>
+<!--        <th>completed</th>-->
+<!--        <th>Start Date</th>-->
+<!--        <th>End Date</th>-->
+<!--        <th>Assigned By</th>-->
+<!--        <th>Assigned To</th>-->
+        <th>Actions</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let usr of user | async">
+        <td>{{usr.userName}}</td>
+        <td>{{usr.email}}</td>
+        <td>{{usr.userRole}}</td>
+<!--        <td>{{tsk.completed}}</td>-->
+<!--        <td>{{tsk.startDate}}</td>-->
+<!--        <td>{{tsk.endDate}}</td>-->
+<!--        <td>{{tsk.assignedBy}}</td>-->
+<!--        <td>{{tsk.assignedTo}}</td>-->
+        <td>
+          <button (click)="getUser(usr.email)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        <td><button (click)="deleteUser(usr.email)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+<!--          <button (click)="updateTask(tsk.uniqueTaskId)" class="btn btn-info" style="margin-left: 10px">Update</button>-->
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

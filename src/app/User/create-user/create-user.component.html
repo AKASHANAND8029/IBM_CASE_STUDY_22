@@ -1,0 +1,45 @@
+
+<h3>Create User</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input type="text" class="form-control" id="userName" required [(ngModel)]="user.userName" name="userName">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+    </div>
+    <br>
+
+
+    <div class="form-group">
+      <label for="encryptedPassword">Password</label>
+      <input type="text" class="form-control" id="encryptedPassword" required [(ngModel)]="user.encryptedPassword" name="encryptedPassword">
+    </div>
+    <br>
+
+
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="RoleType" id="Admin" required [(ngModel)]="user.userRole" value="ADMIN" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="Admin">ADMIN</label>
+
+      <input type="radio" class="btn-check" name="RoleType" id="Manager" required [(ngModel)]="user.userRole" value="MANAGER" autocomplete="off">
+      <label class="btn btn-outline-primary" for="Manager">MANAGER</label>
+
+      <input type="radio" class="btn-check" name="RoleType" id="User" required [(ngModel)]="user.userRole" value="USER" autocomplete="off">
+      <label class="btn btn-outline-primary" for="User">USER</label>
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
+
